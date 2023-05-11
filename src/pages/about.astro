@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout
+  title='About | jimmyhealer'
+  description='About jimmyhealer Lorem Ipsum'
+>
+  <div class='stack gap-20'>
+    <main class='wrapper about'>
+      <Hero
+        title='About'
+        tagline='Thanks for stopping by. Read below to learn more about myself and my background.'
+      >
+        <img
+          width='1553'
+          height='873'
+          src='/assets/at-work.jpg'
+          alt='jimmyhealer at work with a colleague'
+        />
+      </Hero>
+
+      <section>
+        <h2 class='section-title'>Background</h2>
+        <div class='content'>
+          <p>
+            I'm Wei-Hua Chien, a computer science and engineering
+            student at National Taiwan Ocean University.
+            <br />
+            I founded Programing.tw, an integrated teaching platform for programming
+            courses, and led a team to develop it using Vue and Golang.
+            <br />
+            I also founded a book club at school where I taught algorithms and data
+            structures to over 60 students. 
+            <br />
+            I have refined my programming skills through
+            rigorous preparation and practice, winning several awards including
+            a silver medal at the International Collegiate Programming Contest.
+          </p>
+          <p>
+            我是簡蔚驊，就讀於國立臺灣海洋大學資訊工程學系。
+            <br />
+            我創立了普羅程式，並帶領團隊使用 Vue 和 Golang 進行開發一個高互動性程式教學平台 Proglearn。
+            <br />
+            我也在學校創立了一個讀書會，教導演算法和資料結構給超過 60 位學生。
+            <br />
+            我投入三年時間精進了我的演算法與資料結構能力，贏得了許多獎項，包括國際大學生程式設計競賽的銀牌。
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class='section-title'>Education</h2>
+        <div class='content'>
+          <p>
+            National Taiwan Ocean University - Computer Science and Engineering
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class='section-title'>Programming Language</h2>
+        <div class='content'>
+          <p>C / C++, Typescript / Javascript, Python, Go, Java and Dart</p>
+        </div>
+        <h2 class='section-title'>Frontend Skill</h2>
+        <div class='content'>
+          <p>Vue, React and Flutter</p>
+        </div>
+        <h2 class='section-title'>Backend Skill</h2>
+        <div class='content'>
+          <p>Gin, Django, ExpressJS, Firebase and Google Cloud Platform</p>
+        </div>
+      </section>
+      <section>
+        <h2 class='section-title'>Resume</h2>
+        <div class='content'>
+          <a href="https://drive.google.com/file/d/1c3asWBBinNZnNNPBxiOsjANom-DNHCfd/view?usp=share_link" target="_blank">English Resume</a>, 
+          <a href="https://drive.google.com/file/d/1hHQYnDL1JkzWXO0tP5kcSI-Z9mBusJFC/view?usp=share_link" target="_blank">Chinese Resume</a>  
+        </div>        
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
